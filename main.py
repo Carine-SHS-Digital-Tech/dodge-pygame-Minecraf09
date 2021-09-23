@@ -1,12 +1,12 @@
 # Basic Pygame Structure
 
 import pygame                               # Imports pygame and other libraries
-
-# Define Classes (sprites) here
-
+import random
 pygame.init()                               # Pygame is initialised (starts running)
+# Define classes (sprites) here
+class Fallingobject()
 screen = pygame.display.set_mode([700,500]) # Set the width and height of the screen [width,height]
-pygame.display.set_caption("Shreyas,DodgeGame")
+pygame.display.set_caption("Dodge")
 background_image = pygame.image.load("OrchardBackground.jpg").convert()# Load in the background image
 done = False                                # Loop until the user clicks the close button.
 clock = pygame.time.Clock()                 # Used to manage how fast the screen updates
@@ -23,9 +23,9 @@ while done == False:
             done = True                     # Flag that we are done so we exit this loop
 
     # Update sprites here
-screen.blit(background_image, [0,0]
-    pygame.display.flip()                   # Go ahead and update the screen with what we've drawn.
-    clock.tick(20)                          # Limit to 20 frames per second
+screen.blit(background_image, [0,0])
+pygame.display.flip()                   # Go ahead and update the screen with what we've drawn.
+clock.tick(20)                          # Limit to 20 frames per second
 
 pygame.quit()                               # Close the window and quit.
 
