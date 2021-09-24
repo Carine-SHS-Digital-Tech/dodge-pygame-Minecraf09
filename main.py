@@ -4,7 +4,19 @@ import pygame                               # Imports pygame and other libraries
 import random
 pygame.init()                               # Pygame is initialised (starts running)
 # Define classes (sprites) here
-class Fallingobject()
+class Fallingobject(pygame.sprite.Sprite):
+    def _init_(self):
+        pygame.sprite.Sprite._init_(self)
+        self.timecreated = pygame.time.get.ticks()      # Note the time the object is created in.
+        self.image = pygame.Surface({30,30})            # Create a surface on which to display graphics.
+        self.image.set_colourkey(black)                 # Set a colour to be transparent.
+
+        self.rect = self.image.get_rect()               # These lines create the regular sprite,
+        self.rect.x = random.randint(0,670)             # the same size as the image surface and then
+        self.rect.y = 0                                 # assigns it coordinates.
+
+    def setImage(self,graphicSelected):
+        fallingObjectsImage = pygame.image.load(graphicSelected)
 screen = pygame.display.set_mode([700,500]) # Set the width and height of the screen [width,height]
 pygame.display.set_caption("Dodge")
 background_image = pygame.image.load("OrchardBackground.jpg").convert()# Load in the background image
