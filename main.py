@@ -17,6 +17,7 @@ class Fallingobject(pygame.sprite.Sprite):
 
     def setImage(self,graphicSelected):
         fallingObjectsImage = pygame.image.load(graphicSelected)
+        self.image.blit(fallingObjectsImage,(0,0))
 screen = pygame.display.set_mode([700,500]) # Set the width and height of the screen [width,height]
 pygame.display.set_caption("Dodge")
 background_image = pygame.image.load("OrchardBackground.jpg").convert()# Load in the background image
