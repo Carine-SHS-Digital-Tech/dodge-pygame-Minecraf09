@@ -16,18 +16,18 @@ class Fallingobject(pygame.sprite.Sprite):
         self.rect.y = 0                                 # assigns it coordinates.
 
     def setImage(self,graphicSelected):
-        fallingObjectsImage = pygame.image.load(graphicSelected)
-        self.image.blit(fallingObjectsImage,(0,0))
+        fallingObjectsImage = pygame.image.load(graphicSelected)  # Load in passed image file
+        self.image.blit(fallingObjectsImage,(0,0))                # Draw that graphic onto the surface
 screen = pygame.display.set_mode([700,500]) # Set the width and height of the screen [width,height]
 pygame.display.set_caption("Dodge")
 background_image = pygame.image.load("OrchardBackground.jpg").convert()# Load in the background image
 done = False                                # Loop until the user clicks the close button.
 clock = pygame.time.Clock()                 # Used to manage how fast the screen updates
-black    = (   0,   0,   0)                 # Define some colors using rgb values.  These can be
+black    = (   0,   0,   0)                 # Define some colors using rgb values. These can be
 white    = ( 255, 255, 255)                 # used throughout the game instead of using rgb values.
 
 # Define additional Functions and Procedures here
-
+allFallingObjects = pygame.sprite.Group()
 # -------- Main Program Loop -----------
 while done == False:
 
